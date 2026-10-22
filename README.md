@@ -1,13 +1,10 @@
-# my-password-cracker
+## Version 2.0: Dictionary-Based Tester
 
-Wassup! I'm studying Python and cybersecurity. 
-
-I'm doing this project to show my progress. This is the first version, and it is my very first script, so it is quite simple. 
-
-## Version 1.0: 4-Digit PIN Cracker
-This script guesses a 4-digit PIN code. 
+Now the script can read passwords from an external text file (`data.txt`). It does not care about the password length, letters, or special characters.
 
 ### What I learned here:
-* Python types: I learned that I cannot compare an integer and a string (`0 == "0"`).
-* The `.zfill()` method: I used it to add leading zeros for numbers like `0075`.
-* Clean code: I removed an unneeded `else` block because `break` stops the loop anyway.
+* **The `with` manager:** I learned how to open files safely so Python closes them automatically and avoids memory leaks.
+* **The hidden `\n` trap:** When Python reads a file line by line, it adds a hidden newline symbol at the end. Because of this, normal comparison failed at first.
+* **The `.strip()` method:** I used it to cut off this hidden `\n` and spaces, so the comparison works correctly.
+* **Dynamic input:** I changed the hardcoded password to the `input()` function, so the user can type the target manually.
+* **International standards:** I translated all text outputs (like "Password found" and "Attack finished") from Russian to English. Real pentesting tools are always written in English, so I want my code to look professional from the start.
